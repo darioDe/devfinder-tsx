@@ -1,23 +1,16 @@
 import { ThemeProvider, useTheme } from './context/ThemeContext';
-import Header from './components/Header'
-import './index.css'
+import Header from './components/Header';
+import './index.css';
+import Nav from './components/Nav';
 
 const App: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   
   return (
-    <ThemeProvider >
-      <div className= {theme == 'dark-theme' ? 'h-screen w-screen bg-slate-50 py-20': 'h-screen w-screen bg-slate-900 py-20'}>
+      <div className= {theme == 'dark-theme' ? 'h-screen w-screen bg-slate-900 py-20': 'h-screen w-screen bg-slate-50 py-20'}>
         <div className=''>
-        <Header />
-          <nav>
-            <div>
-              <form action="">
-                <input type='search' />
-                <button type='submit'></button>
-              </form>
-            </div>
-          </nav>
+          <Header />
+          <Nav />
           <main>
             <img src="" alt="" />
             <h2>Name</h2>
@@ -40,7 +33,6 @@ const App: React.FC = () => {
           </footer>
         </div>  
       </div>
-    </ThemeProvider >
   )
 }
 
